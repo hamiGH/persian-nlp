@@ -77,7 +77,7 @@ In the event creation step, each sentence is converted into multiple events. The
 
 | Format   | Sentence |
 |----------|--------|
-| simple   | خبر:«بخریم یا نخریم؟»   |
+| simple   | »خبر:«بخریم یا نخریم؟   |
 
 
 
