@@ -75,9 +75,9 @@ In general, it can be said that the TokenizerMe.train method involves several st
 ### Format of the event file
 In the event creation step, each sentence is converted into multiple events. The formation of these events is as follows: first, the desired sentence is broken down into tokens based on whitespace. Then, each token is considered separately, and events are formed accordingly. Specifically, each character within a token is taken as a delimiter point. If the delimiter point contains the "<SPLIT>" tag, the corresponding event is labeled as class T. Otherwise, it is labeled as class F. For example, the events for the given sentence are specified as follows.
 
-<!-- <p align="center"> -->
-<!--   <a href="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png" target="_blank"><img src="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png"></a> -->
-<!-- </p> -->
+<p align="center">
+  <a href="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_sample2.png" target="_blank"><img src="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_sample2.png"></a>
+</p>
 
 <p align="center">
     <img src="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png" alt="Image" width="700" height="150">
