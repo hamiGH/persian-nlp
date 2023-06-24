@@ -79,8 +79,9 @@ In the event creation step, each sentence is converted into multiple events. The
   <a href="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png" target="_blank"><img src="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png"></a>
 </p>
 
-<img src="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png" alt="Image" width="600" height="150">
-
+<p align="center">
+    <img src="https://github.com/hamiGH/persian-nlp/blob/feature_update_readme/images/training_data.png" alt="Image" width="700" height="150">
+</p>
 
 
 <!-- | Format   | Sentence | -->
