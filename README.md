@@ -67,6 +67,9 @@ Mr. Vinken is chairman of Elsevier N.V.<SPLIT>, the Dutch publishing group<SPLIT
 Rudolph Agnew<SPLIT>, 55 years old and former chairman of Consolidated Gold Fields PLC<SPLIT>, was named a nonexecutive director of this British industrial conglomerate<SPLIT>.
 ```
 
-In general, it can be said that the TokenizerMe.train method involves several steps: creating events from the data, indexing them, and training the model.
+In general, it can be said that the TokenizerMe.train method involves several steps:
+- creating events from the data,
+- indexing them,
+- training the model.
 
 
