@@ -26,7 +26,9 @@ String tokens[] = tokenizer.tokenize(sentence);
 As mentioned, TokenizerMe can be trained to create a new model. In general, the following three steps are required for training:
 
 • First, the input stream related to the training data file needs to be opened.
+
 • The method TokenizerME.train should be called.
+
 • The trained TokenizerModel should be saved in a file or used directly.
 
 
