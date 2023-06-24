@@ -31,4 +31,32 @@ As mentioned, TokenizerMe can be trained to create a new model. In general, the 
 
 • The trained TokenizerModel should be saved in a file or used directly.
 
+```java
+// Opening a training data stream
+final String fileName = "data.train";
+InputStreamFactory isf = new InputStreamFactory() {
+    public InputStream createInputStream() throws IOException {
+        return new FileInputStream(fileName);
+    }
+}
+
+Charset charset = Charset.forName("UTF-8");
+ObjectStream<String> lineStream = new PlainTextByLineStream(isf, charset);
+ObjectStream<TokenSample> sampleStream = new TokenSampleStream(lineStream);
+
+// Training model
+String language = "fa";
+TokenizerFactory tokenFactory = TokenizerFactory.create(null, language, null, true, null);
+
+TrainingParameters params = new TrainingParameters().defaultParams();
+params.put(TrainUtil.ITERATIONS_PARAM, "500");
+
+TokenizerModel model = TokenizerME.train(sampleStream, tokenFactory, params);
+
+// Saving model to file
+modelOut = new BufferedOutputStream(new FileOutputStream("MODEL_FILE_NAME"));
+model.serialize(modelOut);
+
+```
+
 
