@@ -22,7 +22,7 @@ TokenizerME tokenizer = new TokenizerME(tokenModel);
 String tokens[] = tokenizer.tokenize(sentence);  
 ```
 
-## Training the Tokenizer
+### Training the Tokenizer
 As mentioned, TokenizerMe can be trained to create a new model. In general, the following three steps are required for training:
 
 • First, the input stream related to the training data file needs to be opened.
@@ -44,7 +44,7 @@ Charset charset = Charset.forName("UTF-8");
 ObjectStream<String> lineStream = new PlainTextByLineStream(isf, charset);
 ObjectStream<TokenSample> sampleStream = new TokenSampleStream(lineStream);
 
-// Training model
+// Training the model
 String language = "fa";
 TokenizerFactory tokenFactory = TokenizerFactory.create(null, language, null, true, null);
 
@@ -53,10 +53,19 @@ params.put(TrainUtil.ITERATIONS_PARAM, "500");
 
 TokenizerModel model = TokenizerME.train(sampleStream, tokenFactory, params);
 
-// Saving model to file
+// Saving model to a file
 modelOut = new BufferedOutputStream(new FileOutputStream("MODEL_FILE_NAME"));
 model.serialize(modelOut);
 
 ```
+
+The format of the training data file is such that each line should contain only one sentence. Tokens should be separated from each other using whitespace or the tag "<SPLIT>". An example of the training data is shown below.
+
+```
+Pierre Vinken<SPLIT>, 61 years old<SPLIT>, will join the board as a nonexecutive director Nov. 29<SPLIT>.
+Mr. Vinken is chairman of Elsevier N.V.<SPLIT>, the Dutch publishing group<SPLIT>.
+Rudolph Agnew<SPLIT>, 55 years old and former chairman of Consolidated Gold Fields PLC<SPLIT>, was named a nonexecutive director of this British industrial conglomerate<SPLIT>.
+```
+
 
 
