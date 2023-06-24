@@ -25,11 +25,11 @@ String tokens[] = tokenizer.tokenize(sentence);
 ### Training the Tokenizer
 As mentioned, TokenizerMe can be trained to create a new model. In general, the following three steps are required for training:
 
-• First, the input stream related to the training data file needs to be opened.
+- First, the input stream related to the training data file needs to be opened.
 
-• The method TokenizerME.train should be called.
+- The method TokenizerME.train should be called.
 
-• The trained TokenizerModel should be saved in a file or used directly.
+- The trained TokenizerModel should be saved in a file or used directly.
 
 ```java
 // Opening a training data stream
@@ -68,8 +68,16 @@ Rudolph Agnew<SPLIT>, 55 years old and former chairman of Consolidated Gold Fiel
 ```
 
 In general, it can be said that the TokenizerMe.train method involves several steps:
-- creating events from the data,
-- indexing them,
-- training the model.
+- Creating events from the data,
+- Indexing them,
+- Training the model.
+
+### Format of the event file
+In the event creation step, each sentence is converted into multiple events. The formation of these events is as follows: first, the desired sentence is broken down into tokens based on whitespace. Then, each token is considered separately, and events are formed accordingly. Specifically, each character within a token is taken as a delimiter point. If the delimiter point contains the "<SPLIT>" tag, the corresponding event is labeled as class T. Otherwise, it is labeled as class F. For example, the events for the given sentence are specified as follows.
+
+| Format   | Sentence |
+|----------|--------|
+| simple   | خبر:«بخریم یا نخریم؟»   |
+
 
 
